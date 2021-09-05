@@ -74,6 +74,7 @@ html{
         background-color: rgb(27, 47, 104);
         height: 92vh;
         display: flex;
+        animation: bg;
         animation-duration: var(--bg-time);
         animation-iteration-count: infinite;
     }
