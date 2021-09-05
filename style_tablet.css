@@ -1,0 +1,1025 @@
+/* Font 
+font-family: 'Lobster', cursive;
+font-family: 'Pacifico', cursive;
+font-family: 'Caveat', cursive;
+*/
+html{
+    box-sizing: border-box;
+}
+:root{
+    /* Boble variable */
+    --bg-time: 60s;
+    --z-star:1;
+}
+
+/* normal screen */
+
+@media only screen and (min-width:768px) and (max-width:1200px){
+    body{
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+    }
+    div.none{
+        display: none;
+    }
+    div.header{
+        height: 8vh;
+        background-color: rgb(44, 44, 44);
+        display: flex;
+        position: sticky;
+        top: 0px;
+        z-index: 30;
+    }
+    div.name{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        height: 8vh;
+        font-family: 'Lobster', cursive;
+        font-size: 4vh;
+        position: relative;
+        left: 5vh;
+        color: white;
+    }
+    #brand{
+        height: 6vh;
+        border-radius: 50%;
+        position: relative;
+        top: 1vh;
+        left: 3vh;
+    }
+    #nav{
+        height: 8vh;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        position: absolute;
+        right: 2vh;
+    }
+    #nav>a{
+        text-decoration: none;
+        color: white;
+        padding: 1vh;
+        font-size: 2.5vh;
+        
+    }
+    #nav>a:hover{
+        color: greenyellow;
+        border-bottom: greenyellow solid 1.5pt;
+    }
+
+    div.about{
+        background-color: rgb(27, 47, 104);
+        height: 92vh;
+        display: flex;
+        animation-duration: var(--bg-time);
+        animation-iteration-count: infinite;
+    }
+    #bg-day{
+        height: 90%;
+        width: 100%;
+        position: absolute;
+        left: 0%;
+        bottom: 0%;
+        opacity: 1;
+        z-index: 6;
+
+        animation: animate-bg-day;
+        animation-duration: var(--bg-time);
+        animation-iteration-count: infinite; 
+    }
+    #bg-evening{
+        height: 90%;
+        width: 100%;
+        position: absolute;
+        left: 0%;
+        bottom: 0%;
+        opacity: 0;
+        z-index: 5;
+
+        animation: animate-bg-even;
+        animation-duration: var(--bg-time);
+        animation-iteration-count: infinite; 
+    }
+    #bg-night{
+        height: 90%;
+        width: 100%;
+        position: absolute;
+        left: 0%;
+        bottom: 0%;
+        z-index: 4;
+    }
+    @keyframes bg{
+        0%{background-color: rgb(27, 47, 104);}
+        20%{background-color: skyblue;}
+        30%{background-color: skyblue;}
+        40%{background-color: rgb(255, 141, 47);}
+        45%{background-color: rgb(255, 115, 0);}
+        45%{background-color: rgb(197, 89, 0);}
+        55%{background-color: rgb(0, 0, 53);}
+        75%{background-color: rgb(0, 0, 32);}
+        95%{background-color: rgb(0, 0, 53);}
+    }
+    
+    @keyframes animate-bg-day{
+        0%{opacity: 0;}
+        15%{opacity: 1;}
+        30%{opacity: 1;}
+        45%{opacity: 0;}
+        100%{opacity: 0;}
+    }
+    @keyframes animate-bg-even{
+        14%{opacity: 0;}
+        15%{opacity: 1;}
+        40%{opacity: 1;}
+        55%{opacity: 0;}
+    }
+    div.bg>img.sun{
+        height: 20vh;
+        position: absolute;
+        left: 0%;
+        top: 73%;
+        opacity: 0.6;
+        z-index: 1;
+        animation: animate-sun;
+        animation-iteration-count: infinite; 
+        animation-duration:var(--bg-time);
+    }
+    @keyframes animate-sun{
+        0%{
+            top: 75%;
+            left: 0%;
+            opacity: 0.6;
+        }
+        10%{
+            opacity: 1;
+        }
+        25%{
+            top: 10%;
+            left: 40%;
+        }
+        40%{opacity: 1;}
+        45%{opacity: 0;}
+        50%{
+            top: 75%;
+            left: 85%;
+            opacity: 0;
+        }
+        51%{opacity: 0;}
+        94%{
+            top: 75%;
+            left: 0%;
+            opacity: 0;}
+        95%{opacity: 0.3;}
+        100%{
+            top: 75%;
+            left: 0%;
+            opacity: 0.6;}
+    }
+
+    div.bg>img.moon{
+
+        height: 20vh;
+        position: absolute;
+        left: 85%;
+        top: 80%;
+        opacity: 0;
+        z-index: 1;
+        
+        animation: animate-moon;
+        animation-iteration-count: infinite; 
+        animation-duration: var(--bg-time); 
+    }
+    @keyframes animate-moon{
+        30%{
+            left: 85%;
+            top: 80%;
+            opacity: 0;
+        }
+        40%{
+            left: 85%;
+            top: 80%;
+            opacity: 1;
+        }
+    
+        75%{
+            left: 40%;
+            top: 10%;
+        }
+        90%{
+            opacity: 1;
+        }
+        100%{
+            top: 80%;
+            left: 0%;
+            opacity: 0;
+        }
+    }
+
+    div.bg>img.cloud1{
+        height: 30vh;
+        position: absolute;
+        left: 25%;
+        top: 65%;
+        z-index: 2;
+        animation: animate-cloud;
+        animation-iteration-count: infinite; 
+        animation-duration: var(--bg-time); 
+        
+    }
+    div.bg>img.cloud2{
+        height: 30vh;
+        position: absolute;
+        left: 1%;
+        top: 10%;
+        z-index: 2;
+        animation: animate-cloud;
+        animation-iteration-count: infinite; 
+        animation-duration: var(--bg-time); 
+        
+    }
+    div.bg>img.cloud3{
+        height: 15vh;
+        position: absolute;
+        left: 70%;
+        top: 40%;
+        z-index: 2;
+        animation: animate-cloud;
+        animation-iteration-count: infinite; 
+        animation-duration: var(--bg-time); 
+    }
+    @keyframes animate-cloud{
+        0%{opacity: 0;}
+        15%{opacity: 0.8;}
+        35%{opacity: 1;}
+        45%{opacity: 0;}
+        90%{opacity: 0;}
+        100%{opacity: 0;}
+    }
+    div.bg>img.star1{
+        height: 10vh;
+        position: absolute;
+        left: 3%;
+        top: 60%;
+        z-index: var(--z-star);
+        animation: animate-star;
+        animation-iteration-count: infinite; 
+        animation-duration: var(--bg-time); 
+    }
+    div.bg>img.star2{
+        height: 10vh;
+        position: absolute;
+        left: 20%;
+        top: 8%;
+        z-index: var(--z-star);
+        animation: animate-star;
+        animation-iteration-count: infinite; 
+        animation-duration: var(--bg-time); 
+    }
+    div.bg>img.star3{
+        height: 10vh;
+        position: absolute;
+        left: 40%;
+        top: 40%;
+        z-index: var(--z-star);
+        animation: animate-star;
+        animation-iteration-count: infinite; 
+        animation-duration: var(--bg-time); 
+    }
+    div.bg>img.star4{
+        height: 10vh;
+        position: absolute;
+        left: 72%;
+        top: 12%;
+        z-index: var(--z-star);
+        animation: animate-star;
+        animation-iteration-count: infinite; 
+        animation-duration: var(--bg-time); 
+    }
+    div.bg>img.star5{
+        height: 10vh;
+        position: absolute;
+        left: 90%;
+        top: 65%;
+        z-index: var(--z-star);
+        animation: animate-star;
+        animation-iteration-count: infinite; 
+        animation-duration: var(--bg-time); 
+    }
+    @keyframes animate-star{
+        0%{opacity: 0.3;}
+        5%{opacity: 0;}
+        40%{opacity: 0;}
+        42.5%{opacity: 0.5;}
+        45%{opacity: 1;}
+        47.5%{opacity: 0.5;}
+        50%{opacity: 1;}
+        52.5%{opacity: 0.5;}
+        55%{opacity: 1;}
+        57.5%{opacity: 0.5;}
+        60%{opacity: 1;}
+        62.5%{opacity: 0.5;}
+        65%{opacity: 1;}
+        67.5%{opacity: 0.5;}
+        70%{opacity: 1;}
+        72.5%{opacity: 0.5;}
+        75%{opacity: 1;}
+        77.5%{opacity: 0.5;}
+        80%{opacity: 1;}
+        82.5%{opacity: 0.5;}
+        85%{opacity: 1;}
+        87.5%{opacity: 0.5;}
+        90%{opacity: 1;}
+        92.5%{opacity: 0.5;}
+        95%{opacity: 1;}
+        97.5%{opacity: 0.5;}
+        100%{opacity: 0.3;}
+    }
+    img.sat{
+        height: 30vh;
+        position: absolute;
+        left: 20%;
+        top: 50%;
+        z-index: 2;
+        transform: rotate(150deg);
+        animation: animate-sat;
+        animation-iteration-count: infinite; 
+        animation-duration: var(--bg-time); 
+    }
+    @keyframes animate-sat{
+        0%{
+            transform: rotate(150deg);
+            opacity: 0;}
+        35%{opacity: 0;}
+        40%{
+            opacity: 0;
+            left: 20%;
+            top: 50%;
+            ransform: rotate(310deg);
+        }
+        48%{
+            opacity: 0;
+            left: 20%;
+            top: 50%;
+            ransform: rotate(310deg);
+        }
+        50%{
+            opacity: 1;
+            left: 20%;
+            top: 50%;
+            ransform: rotate(310deg);
+        }
+        70%{
+            opacity: 0;
+            left: 80%;
+            top: 50%;
+            transform: rotate(310deg);
+        }
+        80%{
+            opacity: 0;
+            left: 70%;
+            top: 80%;
+            transform: rotate(180deg);
+        }
+        81%{
+            opacity: 1;
+            left: 70%;
+            top: 80%;
+            transform: rotate(170deg);
+        }
+        95%{
+            opacity: 1;
+            transform: rotate(160deg);
+        }
+        100%{
+            opacity: 0;
+            left: 30%;
+            top: 10%;
+            transform: rotate(150deg);
+        }
+    }
+    #welcome{
+        font-size: 12vh;
+        font-family: 'Pacifico', cursive;
+        position: absolute;
+        top: 15%;
+        right: 8vh;
+        color: white;
+        z-index: 3;
+    }
+    #to{
+        font-size: 6vh;
+        font-family: 'Pacifico', cursive;
+        position: absolute;
+        top: 30%;
+        right: 8vh;
+        color: white;
+        z-index: 3;
+    }
+    #descrip{
+        font-size: 3vh;
+        position: absolute;
+        top: 45%;
+        right: 8vh;
+        color: white;
+        width: 65vh;
+        text-align: justify;
+        font-family: 'Caveat', cursive;
+        z-index: 8;
+
+    }
+    #resume{
+        font-size: 4vh;
+        position: absolute;
+        top: 78%;
+        right: 40vh;
+        color: white;
+        width: 20vh;
+        height: 7vh;
+        text-align: justify;
+        font-family: 'Caveat', cursive;
+        background-color: rgb(247, 111, 156);
+        display: flex;
+        justify-items: center;
+        justify-content: center;
+        align-items: center;
+        z-index: 10;
+    }
+    #resume:hover{
+        background-color: rgb(138, 138, 253);
+        border-radius: 30px 30px 30px 30px;
+    }
+    #myImgg{
+        height: 45vh;
+        border-radius: 50%;
+        position: relative;
+        left: 6vh;
+        top: 8vh;
+        z-index: 3;
+    }
+
+    div.education{
+        background-color: rgb(88, 184, 131);
+        height: 130vh;
+        display: flex;
+    }
+    #edu{
+        font-size: 12vh;
+        position: relative;
+        left: 10vh;
+        font-family: 'Caveat', cursive;        
+        color: white;
+        height: 18vh;
+        display: flex;
+        justify-content: center;
+        justify-items: center;
+        align-items: center;
+        font-weight: 900;
+    }
+    .mu-contain{
+        position: relative;
+        left: 0vh;
+        top: 17vh;
+        bottom: 2vh;
+        height: 113vh;
+        width: 3vh;
+        display: flex;
+        background-color: greenyellow;
+        flex-direction: column;
+        align-items: center;
+    }
+    img#mu1{
+        width: 12vh;
+        padding: 2vh;
+        z-index: 2;
+        border-radius: 50% ;
+        background-color: greenyellow;
+        
+        margin-top: 5vh !important;
+    }
+    .master{
+        width: 70vh;
+        height: 10vh;
+        position: absolute;
+        font-size: 4.5vh;
+        font-family: 'Caveat', cursive;
+        top: 120vh;  
+        left: 53vh;
+        color: white;
+        font-weight: 800;
+    }
+    #yr1{
+        position: absolute;
+        font-size: 5vh;
+        font-family: 'Caveat', cursive;
+        top: 127vh;  
+        left: 8vh;
+        color: white;
+        font-weight: 800;
+    }
+    img#mu2{
+        width: 12vh;
+        padding: 2vh;
+        z-index: 2;
+        border-radius: 50% ;
+        background-color: greenyellow;
+        margin-top: 34vh;
+    }
+    .bachelor{
+        width: 50vh;
+        height: 10vh;
+        position: absolute;
+        font-size: 4.5vh;
+        font-family: 'Caveat', cursive;
+        top: 170vh;  
+        left: 53vh;
+        color: white;
+        font-weight: 800;
+    }
+    #yr2{
+        position: absolute;
+        font-size: 5vh;
+        font-family: 'Caveat', cursive;
+        top: 176vh;  
+        left: 8vh;
+        color: white;
+        font-weight: 800;
+    }
+    #m-cer{
+        width: 40vh;
+        position: absolute;
+        right: 10vh;
+        top:70vh;
+    }
+    #m-cer:hover{
+        box-shadow: 3px 3px 30px 0px rgb(71, 71, 71);
+        top: 69vh;
+    }
+ 
+    #b-cer{
+        width: 40vh;
+        position: absolute;
+        right: 10vh;
+        top:95vh;
+    }
+    #b-cer:hover{
+        box-shadow: 3px 3px 30px 0px rgb(71, 71, 71);
+        top: 94vh;
+    }
+    div.certificates{
+        background-color: mediumaquamarine;
+        height: 120vh;
+        display: flex;
+    }
+    div#cers{
+        font-size: 12vh;
+        position: absolute;
+        right: 10vh;
+        font-family: 'Caveat', cursive;        
+        color: white;
+        height: 18vh;
+        display: flex;
+        justify-content: center;
+        justify-items: center;
+        align-items: center;
+        font-weight: 900;
+    } 
+    div.cer-con{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        position: relative;
+        top: 20vh;
+        width: 100%;
+        height: 80%;
+    }
+    .cerImg{
+        width: 90%;
+    }
+    div.cer{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        justify-items: center;
+        align-items: center;
+    }
+    a#cer_link{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        justify-items: center;
+        align-items: center;
+    }
+    div.cer{
+        width: 100%;
+        height: 100%;
+    }
+    div.skills{
+        background-color: mediumturquoise;
+        height: 60vh;
+    }
+    div.sk{
+        font-size: 12vh;
+        position: relative;
+        left: 10vh;
+        font-family: 'Caveat', cursive;        
+        color: white;
+        height: 18vh;
+        width: fit-content;
+        display: flex;
+        font-weight: 900;
+    }
+    .skill-contain{
+        display: flex;
+        flex-direction: row;
+        /* background-color: lightblue; */
+        justify-content: center;
+        justify-items: center;
+        align-items: center;
+        align-items: center;
+        position: relative;
+        width: 100%;
+        height: 10vh;
+        top: 10%;
+        left: 0%;
+    }
+   
+    #html{
+        background-color: white;
+        border-radius: 50%;
+        position: relative;
+        width: 15vh;
+        height: 15vh;
+        margin: 1%;
+    }
+    #css{
+        background-color: white;
+        border-radius: 50%;
+        position: relative;
+        width: 15vh;
+        height: 15vh;
+        margin: 1%;
+    }
+    #js{
+        background-color: white;
+        border-radius: 50%;
+        position: relative;
+        width: 15vh;
+        height: 15vh;
+        margin: 1%;
+    }
+    #node{
+        background-color: white;
+        border-radius: 50%;
+        position: relative;
+        width: 15vh;
+        height: 15vh;
+        margin: 1%;
+    }
+    #python{
+        background-color: white;
+        border-radius: 50%;
+        position: relative;
+        width: 15vh;
+        height: 15vh;
+        margin: 1%;
+    }
+    #arduino{
+        background-color: white;
+        border-radius: 50%;
+        position: relative;
+        width: 15vh;
+        height: 15vh;
+        margin: 1%;
+    }
+    #matlab{
+        background-color: white;
+        border-radius: 50%;
+        position: relative;
+        width: 15vh;
+        height: 15vh;
+        margin: 1%;
+    }
+    .bar-contain{
+        width: 15vh;
+        height: 3vh;
+        background-color: gray;
+        margin-top: 1vh;
+
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        border-radius: 30px 30px 30px 30px;
+    }
+    #lv1-1{
+        background-color: greenyellow;
+        border-radius: 30px 0px 0px 30px;
+        margin: 2.5px;
+    }
+    #lv2-1{
+        /* background-color: yellow; */
+        background-color: white;
+        margin-left: 0 !important;
+        margin: 2.5px;
+    }
+    #lv3-1{
+        /* background-color: gold; */
+        background-color: white;
+        margin-left: 0 !important;
+        margin: 2.5px;
+    }
+    #lv4-1{
+        /* background-color: orange; */
+        background-color: white;
+        margin-left: 0 !important;
+        margin: 2.5px;
+    }
+    #lv5-1{
+        /* background-color: orangered; */
+        background-color: white;
+        margin-left: 0 !important;
+        margin: 2.5px;
+        border-radius: 0px 30px 30px 0px;
+    }
+    #lv1-2{
+        background-color: greenyellow;
+        border-radius: 30px 0px 0px 30px;
+        margin: 2.5px;
+    }
+    #lv2-2{
+        background-color: yellow;
+        margin-left: 0 !important;
+        margin: 2.5px;
+    }
+    #lv3-2{
+        /* background-color: gold; */
+        background-color: white;
+        margin-left: 0 !important;
+        margin: 2.5px;
+    }
+    #lv4-2{
+        /* background-color: orange; */
+        background-color: white;
+        margin-left: 0 !important;
+        margin: 2.5px;
+    }
+    #lv5-2{
+        /* background-color: orangered; */
+        background-color: white;
+        margin-left: 0 !important;
+        margin: 2.5px;
+        border-radius: 0px 30px 30px 0px;
+    }
+    #lv1-3{
+        background-color: greenyellow;
+        border-radius: 30px 0px 0px 30px;
+        margin: 2.5px;
+    }
+    #lv2-3{
+        background-color: yellow;
+        margin-left: 0 !important;
+        margin: 2.5px;
+    }
+    #lv3-3{
+        background-color: gold;
+        margin-left: 0 !important;
+        margin: 2.5px;
+    }
+    #lv4-3{
+        /* background-color: orange; */
+        background-color: white;
+        margin-left: 0 !important;
+        margin: 2.5px;
+    }
+    #lv5-3{
+        /* background-color: orangered; */
+        background-color: white;
+        margin-left: 0 !important;
+        margin: 2.5px;
+        border-radius: 0px 30px 30px 0px;
+    }
+    #lv1-4{
+        background-color: greenyellow;
+        border-radius: 30px 0px 0px 30px;
+        margin: 2.5px;
+    }
+    #lv2-4{
+        background-color: yellow;
+        margin-left: 0 !important;
+        margin: 2.5px;
+    }
+    #lv3-4{
+        background-color: gold;
+        margin-left: 0 !important;
+        margin: 2.5px;
+    }
+    #lv4-4{
+        background-color: orange;
+        margin-left: 0 !important;
+        margin: 2.5px;
+    }
+    #lv5-4{
+        /* background-color: orangered; */
+        background-color: white;
+        margin-left: 0 !important;
+        margin: 2.5px;
+        border-radius: 0px 30px 30px 0px;
+    }
+    #skill-text{
+        text-align: center;
+        margin-top: 5px;
+        font-family: 'Caveat', cursive;
+        font-weight: 800;
+        color: white;
+        font-size: 3vh;
+    }
+    div.projects{
+        background-color: skyblue;
+        height: 190vh;
+        display: flex;
+    }
+    div#pjs{
+        font-size: 12vh;
+        position: absolute;
+        right: 10vh;
+        font-family: 'Caveat', cursive;        
+        color: white;
+        height: 18vh;
+        display: flex;
+        justify-content: center;
+        justify-items: center;
+        align-items: center;
+        font-weight: 900;
+    }
+    div.proj-con{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+        position: relative;
+        top: 20vh;
+        width: 100%;
+        height: 50%;
+    }
+    div.proj{
+        width: 90%;
+        height: 90%;
+        margin: 20px;
+    }
+    .proj>a{
+        text-decoration: none;
+        color: gray;
+        font-size: 3.5vh;
+        font-weight: 600;
+        font-family: 'Caveat', cursive;
+    }
+    .proj-img{
+        padding: 10px;
+    }
+    img#pro-img{
+        width: 100%;
+        height: 100%;
+        opacity: 0.5;
+    }
+    div.proj-box{
+        padding: 10px;
+    }
+    div.proj-img{
+        height: 35vh;
+        background-color: white;
+    }
+    div.proj-des{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        justify-items: center;
+        align-items: center;
+        background-color: rgb(51, 51, 51);
+        height: 7vh;
+    }
+    a.proj_link:hover{
+        color: greenyellow;
+        box-shadow: 3px 3px 30px 0px rgb(71, 71, 71);
+        opacity: 1;
+    }
+    img#pro-img:hover{
+        opacity: 1;
+    }
+    div.contact{
+        background-color: rgb(168, 98, 168);
+        height: 80vh;
+    }
+    div.contact-con{
+        height: 55%;
+        width: 10%;
+        position: absolute;
+        left: 8%;  
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        justify-items: center;
+        align-items: center; 
+    }
+    #phone{
+        height: 15vh;
+        padding: 5%;
+    }
+    div#phoneno{
+        font-family: 'Caveat', cursive;
+        position: absolute;
+        left: 130%;
+        top: 14%;
+        font-size: 6vh;
+        font-weight: 800;
+        width: 100vh;
+        color: white;
+    }
+    #email{
+        height: 15vh;
+        padding: 5%;
+    }
+    div#gmail{
+        font-family: 'Caveat', cursive;
+        position: absolute;
+        left: 130%;
+        top: 45%;
+        font-size: 4.5vh;
+        font-weight: 800;
+        width: 100vh;
+        color: white;
+    }
+    #git{
+        height: 15vh;
+        padding:5%;
+    }
+    div#gitt{
+        font-family: 'Caveat', cursive;
+        position: absolute;
+        left: 130%;
+        top: 74%;
+        font-size: 6vh;
+        font-weight: 800;
+        width: 100vh;
+        color: white;
+    }
+    div#conta{
+        font-size: 12vh;
+        position: relative;
+        left: 10vh;
+        font-family: 'Caveat', cursive;        
+        color: white;
+        height: 18vh;
+        width: fit-content;
+        display: flex;
+        font-weight: 900;
+    }
+    
+    #line{
+        position: absolute;
+        height: 23vh;
+        right: 25%;
+        top: 318vh;
+    }
+    #line-1{
+        height: fit-content;
+        width: fit-content;
+        position: relative;
+        font-family: 'Caveat', cursive;
+        font-size: 4vh;
+        font-weight: 800;
+        top: 345vh;
+        left: -15%;
+        color: white;
+    }
+    #linkin{
+        position: absolute;
+        height: 23vh;
+        right: 5%;
+        top: 318vh
+    }
+    #linkin-1{
+        height: fit-content;
+        width: fit-content;
+        position: relative;
+        font-family: 'Caveat', cursive;
+        font-size: 4vh;
+        font-weight: 800;
+        left:5%;
+        top: 345vh;
+        color: white;
+    }
+    #linkin-1>a{
+        text-decoration: none;
+        color: white;
+    }
+    #linkin-1>a:hover{
+        text-decoration: underline;
+        color: rgb(0, 0, 175);
+    }
+    div.foot{
+        height: 8vh;
+        background-color: rgb(44, 44, 44);
+        display: flex;
+    }
+}
+

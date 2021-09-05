@@ -1,0 +1,75 @@
+/* Font 
+font-family: 'Lobster', cursive;
+font-family: 'Pacifico', cursive;
+font-family: 'Caveat', cursive;
+*/
+html{
+    box-sizing: border-box;
+}
+
+/* normal screen */
+
+@media only screen and (max-width:767px){
+    body{
+        padding: 0;
+        margin: 0;
+    }
+    div.none{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        justify-items: center;
+        align-items: center;
+        height: 100vh;
+        background-color: wheat;
+        padding: 20px;
+
+    }
+    div.none>p#p01{
+        font-size: 5vh;
+        text-align: center;
+        font-family: 'Caveat', cursive;
+    }
+    div.none>p#p02{
+        font-size: 3vh;
+        text-align: center;
+        margin: 10px;    
+        font-family: 'Caveat', cursive;
+    }   
+    div.header{
+
+        display: none;
+    }
+    div.about{
+
+        display: none;
+    }
+    div.education{
+
+        display: none;
+    }
+   
+    div.certificates{
+
+        display: none;
+    }
+
+    div.skills{
+
+        display: none;
+    }
+   
+    div.projects{
+
+        display: none;
+    }
+    div.contact{
+
+        display: none;
+    }
+    div.foot{
+
+        display: none;
+    }
+}
+   
