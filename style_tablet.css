@@ -77,6 +77,18 @@ html{
         animation: bg;
         animation-duration: var(--bg-time);
         animation-iteration-count: infinite;
+        overflow: hidden;
+    }
+    @keyframes bg{
+        0%{background-color: rgb(27, 47, 104);}
+        20%{background-color: skyblue;}
+        30%{background-color: skyblue;}
+        40%{background-color: rgb(255, 141, 47);}
+        45%{background-color: rgb(255, 115, 0);}
+        45%{background-color: rgb(197, 89, 0);}
+        55%{background-color: rgb(0, 0, 53);}
+        75%{background-color: rgb(0, 0, 32);}
+        95%{background-color: rgb(0, 0, 53);}
     }
     #bg-day{
         height: 90%;
@@ -111,17 +123,6 @@ html{
         left: 0%;
         bottom: 0%;
         z-index: 4;
-    }
-    @keyframes bg{
-        0%{background-color: rgb(27, 47, 104);}
-        20%{background-color: skyblue;}
-        30%{background-color: skyblue;}
-        40%{background-color: rgb(255, 141, 47);}
-        45%{background-color: rgb(255, 115, 0);}
-        45%{background-color: rgb(197, 89, 0);}
-        55%{background-color: rgb(0, 0, 53);}
-        75%{background-color: rgb(0, 0, 32);}
-        95%{background-color: rgb(0, 0, 53);}
     }
     
     @keyframes animate-bg-day{
